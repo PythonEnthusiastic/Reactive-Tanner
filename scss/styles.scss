@@ -1,0 +1,140 @@
+@use "_variables.scss";
+
+@mixin page-alignment($pad-r: variables.$padding-r, $pad-l: variables.$padding-l) {
+    padding-right: $pad-r;
+    padding-left: $pad-l;
+}
+
+@mixin header-text-style($size: variables.$text-size) {
+    font-size: $size;
+    color: variables.$primary-color;
+}
+
+%set-direction {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.page-header {
+    @include page-alignment();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    width: 100vw;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header img, .header-text {
+    margin: 0 50px;
+}
+
+.page-header img {
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+.header-text {
+    color: white;
+    font-size: 2em;
+}
+
+.header-text h1 {
+    @include header-text-style();
+}
+
+.header-text h2 {
+    @include header-text-style(1em);
+    font-weight: 100;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+    width: 100vw;
+}
+
+.content h2 {
+    letter-spacing: 8px;
+}
+
+.section {
+    margin-top: 50px;
+}
+
+/* Left content */
+
+.left-content {
+    @extend %set-direction;
+    @include page-alignment(5%,5%);
+    width: 50vw;
+}
+
+.left-content .sub-section {
+    margin-bottom: 10px
+}
+
+.left-content i {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.left-content p {
+    display: inline;
+}
+
+.section hr {
+    margin: 10px 0;
+    border-bottom: 5px rgb(106, 103, 103) solid;
+    width: 75px;
+}
+  
+.right-content {
+    @extend %set-direction;
+    @include page-alignment(5%, 5%);
+    width: 50vw;
+    background-color: variables.$secondary-color;
+}
+
+.right-content ul {
+    list-style-position: inside;
+}
+
+.right-content h3 span {
+    font-weight: 500;
+}
+
+.right-content h4 {
+    font-weight: 100;
+    margin: 5px 0 10px 0;
+}
+
+.right-content .sub-section {
+    margin-bottom: 20px
+}
+// 1m
