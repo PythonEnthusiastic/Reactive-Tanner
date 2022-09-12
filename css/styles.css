@@ -11,16 +11,8 @@
 }
 
 html, body {
-  overflow: hidden;
-}
-
-html {
-  height: 100vh;
-}
-
-body {
+  overflow-x: hidden;
   height: 100%;
-  box-sizing: border-box;
 }
 
 .page-header {
@@ -30,7 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 200px;
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,7 +59,7 @@ body {
 .content {
   display: flex;
   height: 100%;
-  width: 100vw;
+  width: 100%;
 }
 
 .content h2 {
@@ -82,7 +74,7 @@ body {
 .left-content {
   padding-right: 5%;
   padding-left: 5%;
-  width: 50vw;
+  width: 50%;
 }
 
 .left-content .sub-section {
@@ -107,7 +99,7 @@ body {
 .right-content {
   padding-right: 5%;
   padding-left: 5%;
-  width: 50vw;
+  width: 50%;
   background-color: #D5D7DB;
 }
 
@@ -129,12 +121,6 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
-  html, body {
-    overflow: hidden;
-  }
-  body {
-    height: unset;
-  }
   .content {
     flex-direction: column;
   }
@@ -145,7 +131,7 @@ body {
   }
   .left-content, .right-content {
     width: 100%;
-    height: 450px;
+    height: 100vh;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -154,12 +140,30 @@ body {
   }
 }
 @media only screen and (max-width: 750px) {
-  html, body {
-    overflow: scroll;
+  .page-header img {
+    width: 150px;
+    height: 150px;
+  }
+  .page-header img, .header-text {
+    margin: 0 10px;
+  }
+  .header-text h1 {
+    font-size: 1em;
+    color: #FFFFFF;
+  }
+  .header-text h2 {
+    font-size: 0.5em;
+    color: #FFFFFF;
+    font-weight: 100;
+  }
+  .content .section {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 25px;
   }
   .left-content, .right-content {
     flex-direction: column;
-    height: 550px;
+    height: 150vh;
     justify-content: flex-start;
   }
 }
